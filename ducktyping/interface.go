@@ -16,7 +16,7 @@ func (c Circle) GetArea() int {
 	return 3 * c.Radius * c.Radius
 }
 
-//Square（正方形）という(ry
+//Square（正方形）という構造体を定義 *1
 type Square struct {
 	Height int
 	Mail   string
@@ -28,7 +28,7 @@ func (s Square) GetArea() int {
 
 //Figure（図形）インターフェイスを定義 *3
 type Figure interface {
-	// GetArea() int
+	GetArea() int
 }
 
 //Figureの面積を表示する関数を定義 *4
@@ -53,4 +53,5 @@ func main() {
 
 // circleはCircle型
 // Circle型はメソッドGetArea()を持つ。よってFigureインターフェイスに含まれる
-// Figureインターフェイスに含まれるのでDisplayArea()が実行できる
+// 同様にsquareもメソッドGetArea()を持つのでFigureインターフェイスに含まれる
+// DisplayArea()の引数がFigureインターフェースなので、circle型も、square型もどちらも引数にとれる
